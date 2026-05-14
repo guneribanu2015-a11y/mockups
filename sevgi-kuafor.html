@@ -1,532 +1,452 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sevgi Kuaför - Kadıköy İstanbul</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgi Kuaför - İstanbul'da Profesyonel Güzellik Hizmetleri</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  :root {
-    --gold: #c9a96e;
-    --gold-light: #e8d5b0;
-    --gold-dark: #a07840;
-    --dark: #1a1a2e;
-    --dark-soft: #2d2d44;
-    --text: #2c2c2c;
-    --text-light: #666;
-    --white: #ffffff;
-    --light-bg: #fafaf8;
-    --section-bg: #f5f3ef;
-    --border: #e8e0d0;
-  }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-  html {
-    scroll-behavior: smooth;
-  }
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-  body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background-color: var(--white);
-    color: var(--text);
-    overflow-x: hidden;
-  }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  /* NAVIGATION */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 5%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-  }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #c41e3a;
+            text-decoration: none;
+        }
 
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-  .nav-logo-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-  .nav-logo-sub {
-    font-size: 0.65rem;
-    color: var(--gold-dark);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-family: 'Arial', sans-serif;
-  }
+        .nav-links a:hover {
+            color: #c41e3a;
+        }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    list-style: none;
-  }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    font-family: 'Arial', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-  }
+        .hero-content {
+            max-width: 800px;
+        }
 
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--gold);
-    transition: width 0.3s;
-  }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-  .nav-links a:hover {
-    color: var(--gold-dark);
-  }
+        .hero p {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
 
-  .nav-links a:hover::after {
-    width: 100%;
-  }
+        .rating {
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #666;
+        }
 
-  .nav-cta {
-    background: var(--gold) !important;
-    color: var(--white) !important;
-    padding: 10px 22px !important;
-    border-radius: 2px;
-    font-weight: 600 !important;
-  }
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
 
-  .nav-cta::after {
-    display: none !important;
-  }
+        .cta-button {
+            display: inline-block;
+            background-color: #c41e3a;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+        }
 
-  .nav-cta:hover {
-    background: var(--gold-dark) !important;
-    color: var(--white) !important;
-  }
+        .cta-button:hover {
+            background-color: #a01830;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+        }
 
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    padding: 5px;
-  }
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
-  .hamburger span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--dark);
-    transition: all 0.3s;
-  }
+        .section-title {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
 
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    border-bottom: 2px solid var(--gold-light);
-    padding: 20px 5%;
-    z-index: 999;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-  .mobile-menu.open {
-    display: block;
-  }
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #c41e3a;
+        }
 
-  .mobile-menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
-  .mobile-menu a {
-    text-decoration: none;
-    color: var(--text);
-    font-family: 'Arial', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: 500;
-    display: block;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    transition: color 0.3s;
-  }
+        .service-card h3 {
+            color: #c41e3a;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
 
-  .mobile-menu a:hover {
-    color: var(--gold-dark);
-  }
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
 
-  .mobile-menu a.mobile-cta {
-    background: var(--gold);
-    color: var(--white);
-    text-align: center;
-    padding: 14px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 2px;
-    font-weight: 600;
-  }
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+            padding: 60px 20px;
+            margin-top: 40px;
+        }
 
-  /* HERO SECTION */
-  .hero {
-    min-height: 100vh;
-    padding-top: 70px;
-    background: linear-gradient(135deg, #fefefe 0%, #f9f5ef 40%, #f2ead8 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
 
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
+        .contact-item {
+            text-align: center;
+        }
 
-  .hero-decoration-left {
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.07;
-    font-size: 20rem;
-    color: var(--gold);
-    font-family: 'Georgia', serif;
-    pointer-events: none;
-    line-height: 1;
-    user-select: none;
-  }
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
 
-  .hero-decoration-right {
-    position: absolute;
-    right: 3%;
-    top: 20%;
-    opacity: 0.05;
-    font-size: 15rem;
-    color: var(--gold);
-    font-family: 'Georgia', serif;
-    pointer-events: none;
-    user-select: none;
-  }
+        .contact-item h3 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
 
-  .hero-content {
-    text-align: center;
-    z-index: 1;
-    padding: 60px 20px;
-    max-width: 800px;
-    animation: fadeInUp 1s ease forwards;
-  }
+        .contact-item p {
+            color: #666;
+            font-size: 1rem;
+        }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+        .contact-item a {
+            color: #c41e3a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-  .hero-badge {
-    display: inline-block;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    border: 1px solid var(--gold);
-    padding: 8px 20px;
-    margin-bottom: 25px;
-    background: rgba(201, 169, 110, 0.08);
-  }
+        .contact-item a:hover {
+            color: #a01830;
+        }
 
-  .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
-    color: var(--dark);
-    line-height: 1.1;
-    margin-bottom: 15px;
-    font-weight: 400;
-    letter-spacing: 3px;
-  }
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
 
-  .hero-title span {
-    color: var(--gold-dark);
-    font-style: italic;
-  }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-  .hero-subtitle {
-    font-family: 'Arial', sans-serif;
-    font-size: clamp(0.85rem, 2vw, 1rem);
-    letter-spacing: 2px;
-    color: var(--text-light);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-  }
+        .footer-content p {
+            margin: 10px 0;
+        }
 
-  .hero-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px auto;
-    max-width: 300px;
-  }
+        .footer-links {
+            margin-top: 20px;
+        }
 
-  .hero-divider-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold));
-  }
+        .footer-links a {
+            color: #c41e3a;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
 
-  .hero-divider-line:last-child {
-    background: linear-gradient(to left, transparent, var(--gold));
-  }
+        .footer-links a:hover {
+            color: #ff6b6b;
+        }
 
-  .hero-divider-icon {
-    color: var(--gold);
-    font-size: 1.2rem;
-  }
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
 
-  .hero-description {
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    color: var(--text-light);
-    line-height: 1.8;
-    max-width: 550px;
-    margin: 0 auto 35px;
-  }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
 
-  .hero-stars {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 35px;
-  }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: white;
+                padding: 20px;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
 
-  .stars {
-    display: flex;
-    gap: 3px;
-  }
+            .nav-links.active {
+                display: flex;
+            }
 
-  .star {
-    color: var(--gold);
-    font-size: 1.1rem;
-  }
+            .hero h1 {
+                font-size: 2rem;
+            }
 
-  .star.half {
-    position: relative;
-    color: #ddd;
-  }
+            .hero p {
+                font-size: 1rem;
+            }
 
-  .star.half::before {
-    content: '★';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    clip-path: inset(0 50% 0 0);
-  }
+            .section-title {
+                font-size: 1.8rem;
+            }
 
-  .rating-text {
-    font-family: 'Arial', sans-serif;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    letter-spacing: 1px;
-  }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-  .rating-score {
-    font-weight: 700;
-    color: var(--text);
-    font-size: 1rem;
-  }
+            .hero {
+                padding: 40px 20px;
+                min-height: 400px;
+            }
 
-  .hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+            .services {
+                padding: 40px 20px;
+            }
+        }
 
-  .btn-primary {
-    background: var(--dark);
-    color: var(--white);
-    padding: 16px 40px;
-    text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 0.3s;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-  }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
 
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gold);
-    transition: left 0.3s;
-    z-index: 0;
-  }
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
 
-  .btn-primary:hover::before {
-    left: 0;
-  }
+            .nav-container {
+                padding: 0 15px;
+            }
 
-  .btn-primary span {
-    position: relative;
-    z-index: 1;
-  }
+            .logo {
+                font-size: 1.4rem;
+            }
 
-  .btn-secondary {
-    background: transparent;
-    color: var(--dark);
-    padding: 15px 35px;
-    text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: 1.5px solid var(--dark);
-    border-radius: 2px;
-    transition: all 0.3s;
-    display: inline-block;
-  }
+            .section-title {
+                font-size: 1.5rem;
+            }
 
-  .btn-secondary:hover {
-    background: var(--dark);
-    color: var(--white);
-  }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">✨ Sevgi Kuaför</a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="tel:(0216) 418 56 46" class="cta-button">Randevu Al</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  .hero-scroll {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    animation: bounce 2s infinite;
-  }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sevgi Kuaför</h1>
+            <p>Kadıköy'de Profesyonel Güzellik ve Saç Bakım Hizmetleri</p>
+            <div class="rating">
+                <span class="stars">★★★★★</span> 4.7/5 (89 Değerlendirme)
+            </div>
+            <a href="tel:(0216) 418 56 46" class="cta-button">Randevu Al</a>
+        </div>
+    </section>
 
-  .hero-scroll span {
-    font-family: 'Arial', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    color: var(--gold-dark);
-    text-transform: uppercase;
-  }
+    <!-- Services Section -->
+    <section class="services" id="hizmetler">
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Saç Kesimi</h3>
+                <p>Profesyonel stilistlerimiz tarafından yapılan kişiye özel saç kesimi hizmetiyle yüzünüze en uygun stili keşfedin.</p>
+            </div>
 
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-  }
+            <div class="service-card">
+                <h3>Saç Boyası</h3>
+                <p>Kaliteli boyalar kullanarak yapılan saç boyası işlemi ile hayal ettiğiniz rengi gerçekleştirin.</p>
+            </div>
 
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
+            <div class="service-card">
+                <h3>Saç Straykası</h3>
+                <p>Argan yağı ve keratin içeren premium ürünlerle yapılan profesyonel saç straykası hizmetiyle saçlarınızı yenileyin.</p>
+            </div>
 
-  /* FEATURES STRIP */
-  .features-strip {
-    background: var(--dark);
-    padding: 30px 5%;
-  }
+            <div class="service-card">
+                <h3>Örgü ve Dalgalı Saç</h3>
+                <p>Dalgalı ve örgü saç işlemleriyle doğal ve uzun süreli estetik bir görünüme sahip olun.</p>
+            </div>
 
-  .features-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+            <div class="service-card">
+                <h3>Fön ve Styling</h3>
+                <p>Günlük kullanım veya özel etkinlikler için profesyonel fön ve styling hizmetiyle mükemmel görünün.</p>
+            </div>
 
-  .feature-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--white);
-  }
+            <div class="service-card">
+                <h3>Saç Bakım Paketleri</h3>
+                <p>Saçlarınızın sağlığını ve güzelliğini korumak için özel olarak hazırlanan bakım paketlerimiz.</p>
+            </div>
 
-  .feature-icon {
-    font-size: 1.5rem;
-    color: var(--gold);
-  }
+            <div class="service-card">
+                <h3>Protein Bakım</h3>
+                <p>Hasarlı ve kurumuş saçlar için etkili protein tedavisi ile saçlarınızı güçlendirin.</p>
+            </div>
 
-  .feature-text strong {
-    display: block;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 2px;
-  }
+            <div class="service-card">
+                <h3>Kaynak Saç</h3>
+                <p>Doğal görünümlü kaynak saç uygulaması ile saçlarınızın hacmini ve uzunluğunu artırın.</p>
+            </div>
 
-  .feature-text span {
-    font
+            <div class="service-card">
+                <h3>Saç Terapisi</h3>
+                <p>Saçkıranlığı ve saç problemlerine karşı etkili terapötik tedaviler sunuyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="iletisim">
+        <div class="contact-container">
+            <h2 class="section-title">Bize Ulaşın</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Telefon</h3>
+                    <p>
+                        <a href="tel:(0216) 418 56 46">(0216) 418 56 46</a>
+                    </p>
+                    <p style="color: #999; font-size: 0.9rem;">Haftanın her günü hizmet vermekteyiz</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Adres</h3>
+                    <p>Osmanağa, Süleymanpaşa Sk. No:14<br>34714 Kadıköy/İstanbul, Türkiye</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <h3>Çalışma Saatleri</h3>
+                    <p>Pazartesi - Cumartesi<br>09:00 - 19:00</p>
+                    <p style="color: #999; font-size: 0.9rem;">Pazar: Kapalı</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Sevgi Kuaför</h3>
+            <p>&copy; 2024 Tüm Hakları Saklıdır. Sevgi Kuaför -
