@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuaför Önder Toprak - Kadıköy İstanbul</title>
+    <title>Kuaför Önder Toprak - İstanbul Kadıköy</title>
     <style>
         * {
             margin: 0;
@@ -11,500 +11,440 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --gold: #c9a84c;
-            --gold-light: #e8c97a;
-            --gold-dark: #a07830;
-            --dark: #1a1a1a;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-            --light-gray: #f5f5f5;
-            --white: #ffffff;
-            --border: #e0e0e0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Georgia', serif;
-            background-color: var(--white);
-            color: var(--dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* Navigation Bar */
         nav {
-            position: fixed;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            transition: box-shadow 0.3s ease;
-        }
-
-        nav.scrolled {
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 100;
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 1rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 70px;
+            align-items: center;
         }
 
-        .nav-logo {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .nav-logo span:first-child {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--dark);
-            letter-spacing: 1px;
-        }
-
-        .nav-logo span:last-child {
-            font-size: 11px;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-style: italic;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #8B4513;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            align-items: center;
+            gap: 2rem;
             list-style: none;
-            gap: 36px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-gray);
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-family: 'Arial', sans-serif;
+            color: #333;
+            font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--gold-dark);
+            color: #8B4513;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            background-color: var(--gold);
-            color: var(--white) !important;
-            padding: 10px 24px;
-            border-radius: 2px;
-            font-size: 13px !important;
-            letter-spacing: 1.5px !important;
-            transition: background-color 0.3s ease !important;
-        }
-
-        .nav-cta::after {
-            display: none !important;
-        }
-
-        .nav-cta:hover {
-            background-color: var(--gold-dark) !important;
-            color: var(--white) !important;
-        }
-
-        .hamburger {
+        .menu-toggle {
             display: none;
-            flex-direction: column;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
-            gap: 5px;
+            color: #333;
         }
 
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background-color: var(--dark);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: var(--white);
-            border-bottom: 1px solid var(--border);
-            z-index: 999;
-            padding: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0;
-        }
-
-        .mobile-menu ul li a {
-            display: block;
-            padding: 14px 24px;
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-family: 'Arial', sans-serif;
-            transition: color 0.3s ease;
-            text-align: center;
-        }
-
-        .mobile-menu ul li a:hover {
-            color: var(--gold);
-        }
-
-        .mobile-menu .mobile-cta {
-            display: block;
-            margin: 16px 24px 0;
-            background-color: var(--gold);
-            color: var(--white);
-            padding: 14px 24px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-family: 'Arial', sans-serif;
-            border-radius: 2px;
-            transition: background-color 0.3s ease;
-        }
-
-        .mobile-menu .mobile-cta:hover {
-            background-color: var(--gold-dark);
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #fdfcfa 0%, #f7f3ed 50%, #fdfcfa 100%);
-            display: flex;
-            align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 70px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 60% 80%, rgba(201, 168, 76, 0.05) 0%, transparent 40%);
-        }
-
-        .hero-decoration-left {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 300px;
-            height: 100%;
-            background: linear-gradient(to right, rgba(201,168,76,0.04), transparent);
-        }
-
-        .hero-decoration-right {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 300px;
-            height: 100%;
-            background: linear-gradient(to left, rgba(201,168,76,0.04), transparent);
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 1;
-            max-width: 800px;
-            padding: 40px 24px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background-color: rgba(201, 168, 76, 0.1);
-            border: 1px solid rgba(201, 168, 76, 0.3);
-            color: var(--gold-dark);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-family: 'Arial', sans-serif;
-            margin-bottom: 30px;
         }
 
-        .hero-badge::before {
-            content: '✦';
-            font-size: 10px;
-        }
-
-        .hero-badge::after {
-            content: '✦';
-            font-size: 10px;
-        }
-
-        .hero-title {
-            font-size: clamp(40px, 7vw, 80px);
-            font-weight: normal;
-            color: var(--dark);
-            line-height: 1.1;
-            margin-bottom: 8px;
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-weight: 800;
             letter-spacing: -1px;
         }
 
-        .hero-title span {
-            color: var(--gold);
-            font-style: italic;
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
         }
 
-        .hero-subtitle-name {
-            font-size: clamp(16px, 3vw, 22px);
-            color: var(--dark-gray);
-            font-family: 'Arial', sans-serif;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .hero-divider {
+        .rating {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 16px;
-            margin: 24px auto;
-        }
-
-        .hero-divider::before,
-        .hero-divider::after {
-            content: '';
-            display: block;
-            height: 1px;
-            width: 80px;
-            background: linear-gradient(to right, transparent, var(--gold));
-        }
-
-        .hero-divider::after {
-            background: linear-gradient(to left, transparent, var(--gold));
-        }
-
-        .hero-divider span {
-            color: var(--gold);
-            font-size: 16px;
-        }
-
-        .hero-description {
-            font-size: 16px;
-            color: var(--medium-gray);
-            max-width: 500px;
-            margin: 0 auto 40px;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.8;
-        }
-
-        .hero-stars {
-            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 40px;
-        }
-
-        .stars {
-            display: flex;
-            gap: 3px;
-        }
-
-        .stars span {
-            color: var(--gold);
-            font-size: 18px;
-        }
-
-        .rating-text {
-            font-family: 'Arial', sans-serif;
-            font-size: 14px;
-            color: var(--medium-gray);
-            letter-spacing: 0.5px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
+            gap: 1rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
+        .stars {
+            color: #f39c12;
+            font-size: 1.2rem;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .appointment-btn {
             display: inline-block;
-            background-color: var(--gold);
-            color: var(--white);
+            background-color: #8B4513;
+            color: white;
+            padding: 1rem 3rem;
             text-decoration: none;
-            padding: 16px 40px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-family: 'Arial', sans-serif;
-            border-radius: 2px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
         }
 
-        .btn-primary:hover {
-            background-color: var(--gold-dark);
-            box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4);
+        .appointment-btn:hover {
+            background-color: #6b3410;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
         }
 
-        .btn-secondary {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--dark);
-            text-decoration: none;
-            padding: 16px 40px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-family: 'Arial', sans-serif;
-            border-radius: 2px;
-            border: 1px solid var(--dark);
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--dark);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        .hero-scroll {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            animation: bounce 2s infinite;
-        }
-
-        .hero-scroll span {
-            font-family: 'Arial', sans-serif;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--medium-gray);
-        }
-
-        .hero-scroll svg {
-            width: 20px;
-            height: 20px;
-            color: var(--gold);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-8px); }
-            60% { transform: translateX(-50%) translateY(-4px); }
-        }
-
-        /* SECTION COMMON */
-        section {
-            padding: 100px 24px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-family: 'Arial', sans-serif;
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 16px;
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
         }
 
         .section-title {
-            font-size: clamp(28px, 4vw, 44px);
-            font-weight: normal;
-            color: var(--dark);
-            line-height: 1.2;
-            margin-bottom: 16px;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 3rem;
+            font-weight: 700;
         }
 
-        .section-title em {
-            font-style: italic;
-            color: var(--gold);
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .section-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+        .service-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #8B4513;
         }
 
-        .section-line::before,
-        .section-line::after {
-            content: '';
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #e8d5c4 0%, #f5e6d3 100%);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h2 {
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-item strong {
+            color: #8B4513;
             display: block;
-            height: 1px;
-            width: 60px;
-            background-color: var(--border);
+            margin-bottom: 0.5rem;
         }
 
-        .section-line span {
-            color: var(--
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #8B4513;
+        }
+
+        .contact-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: #ffffff;
+                padding: 1rem;
+                gap: 1rem;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+                min-height: 400px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .appointment-btn {
+                padding: 0.8rem 2.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-icon {
+                font-size: 2.5rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">✂️ Kuaför Önder Toprak</a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Kuaför Önder Toprak</h1>
+            <p>Kadıköy'ün en güvenilir berber ve kuaför hizmeti</p>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">4.6 (102 yorumlar)</span>
+            </div>
+            <a href="tel:(0216) 449 63 64" class="appointment-btn">Randevu Al</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Sunulan Hizmetler</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💇‍♂️</div>
+                <h3>Saç Kesimi</h3>
+                <p>Modern ve klasik tasarımlarla saç kesimi hizmetleri. Kişisel stil ve tercihlere göre özel kesim uygulamaları.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧔</div>
+                <h3>Sakal Bakımı</h3>
+                <p>Profesyonel sakal tıraşı ve şekillendirme hizmetleri. Cilt bakımı ve rahatlama garantili uygulamalar.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Saç Boyası</h3>
+                <p>Kaliteli boyalarla doğal görünümlü saç rengi değişiklikleri. Tüm saç türlerine uygun profesyonel uygulama.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💆‍♂️</div>
+                <h3>Masaj ve Cilt Bakımı</h3>
+                <p>Rahatlatıcı baş ve boyun masajı. Cilt bakımı ve beslenme uygulamaları.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👨‍🦱</div>
+                <h3>Saç Dalgası ve Perm</h3>
+                <p>Doğal görünümlü dalgalanma ve kalıcı dalgalanma hizmetleri. Saç sağlığı korunarak uygulama.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧼</div>
+                <h3>Saç Yıkama Tedavisi</h3>
+                <p>Yoğun besleyici ve onarıcı saç yıkama tedavileri. Saç direncini güçlendirici özel ürünler kullanılır.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title" style="margin-top: 0;">İletişim Bilgileri</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Bize Ulaşın</h2>
+                    <div class="contact-item">
+                        <strong>📍 Adres</strong>
+                        <p>Rasimpaşa, Misak-ı Milli Sok. No:95<br>34716 Kadıköy/İstanbul, Türkiye</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>📞 Telefon</strong>
+                        <a href="tel:(0216) 449 63 64">(0216) 449 63 64</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>🕐 Çalışma Saatleri</strong>
+                        <p>Pazartesi - Cumartesi: 09:00 - 19:00<br>Pazar: 10:00 - 18:00</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>⭐ Değerlendirme</strong>
+                        <p>Google: 4.6/5.0
