@@ -1,508 +1,457 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kuaför RAFET - Kadıköy İstanbul</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuaför RAFET - İstanbul Kadıköy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
 
-  :root {
-    --gold: #b8973a;
-    --gold-light: #d4af5a;
-    --gold-pale: #f5ede0;
-    --dark: #1a1a1a;
-    --text: #2c2c2c;
-    --text-light: #5a5a5a;
-    --white: #ffffff;
-    --bg: #fafaf8;
-    --bg-section: #f4f1ec;
-    --border: #e8e0d0;
-  }
+        /* Navigation Bar */
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-  html {
-    scroll-behavior: smooth;
-  }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  body {
-    font-family: 'Raleway', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
 
-  /* ===== NAVBAR ===== */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
-  }
+        .logo span {
+            color: #d4a574;
+        }
 
-  nav.scrolled {
-    box-shadow: 0 2px 30px rgba(0,0,0,0.08);
-  }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-  .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 75px;
-  }
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
+        .nav-links a:hover {
+            color: #d4a574;
+        }
 
-  .nav-logo .brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark);
-    letter-spacing: 2px;
-  }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-  .nav-logo .brand-sub {
-    font-size: 0.65rem;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-transform: uppercase;
-    font-weight: 500;
-  }
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    list-style: none;
-  }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
 
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s;
-  }
+        .hero h1 span {
+            color: #d4a574;
+        }
 
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1.5px;
-    background: var(--gold);
-    transition: width 0.3s ease;
-  }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
 
-  .nav-links a:hover {
-    color: var(--gold);
-  }
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
 
-  .nav-links a:hover::after {
-    width: 100%;
-  }
+        .stars {
+            color: #ffc107;
+        }
 
-  .nav-cta {
-    background: var(--gold) !important;
-    color: white !important;
-    padding: 0.6rem 1.5rem !important;
-    border-radius: 2px !important;
-    letter-spacing: 1px !important;
-    transition: background 0.3s ease, transform 0.2s ease !important;
-  }
+        .rating-text {
+            color: #666;
+        }
 
-  .nav-cta::after {
-    display: none !important;
-  }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #d4a574 0%, #c49561 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+        }
 
-  .nav-cta:hover {
-    background: var(--gold-light) !important;
-    transform: translateY(-1px);
-    color: white !important;
-  }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+        }
 
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-  }
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
 
-  .hamburger span {
-    display: block;
-    width: 26px;
-    height: 2px;
-    background: var(--dark);
-    transition: all 0.3s ease;
-    border-radius: 2px;
-  }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
 
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
+        .section-title span {
+            color: #d4a574;
+        }
 
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
+        .service-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid #d4a574;
+        }
 
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 75px;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 2rem 2rem;
-    z-index: 998;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    transform: translateY(-10px);
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
 
-  .mobile-menu.open {
-    display: block;
-    transform: translateY(0);
-    opacity: 1;
-  }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
 
-  .mobile-menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+        }
 
-  .mobile-menu ul li a {
-    display: block;
-    padding: 1rem 0;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-    transition: color 0.3s;
-  }
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
 
-  .mobile-menu ul li a:hover {
-    color: var(--gold);
-  }
+        /* Contact Section */
+        .contact {
+            background-color: #f5f5f5;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
 
-  .mobile-menu ul li:last-child a {
-    border-bottom: none;
-    color: var(--gold);
-    font-weight: 700;
-  }
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fdfbf7 0%, #f5ede0 50%, #ede5d8 100%);
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 75px;
-  }
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(184,151,58,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-  }
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
 
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    left: -150px;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(184,151,58,0.06) 0%, transparent 70%);
-    border-radius: 50%;
-  }
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
 
-  .hero-decor-line {
-    position: absolute;
-    top: 0;
-    right: 30%;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(184,151,58,0.2), transparent);
-  }
+        .info-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
 
-  .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-  }
+        .info-icon {
+            font-size: 1.5rem;
+            color: #d4a574;
+            margin-top: 0.3rem;
+        }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: white;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 0.5rem 1.2rem;
-    border-radius: 2px;
-    margin-bottom: 2rem;
-  }
+        .info-text {
+            color: #555;
+        }
 
-  .hero-badge .dot {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
+        .info-text a {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
+        .info-text a:hover {
+            color: #c49561;
+        }
 
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 5vw, 5rem);
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+        }
 
-  .hero-title span {
-    color: var(--gold);
-    display: block;
-  }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
 
-  .hero-subtitle {
-    font-size: 1rem;
-    color: var(--text-light);
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-    font-weight: 400;
-    line-height: 1.8;
-  }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
 
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
 
-  .btn-primary {
-    display: inline-block;
-    background: var(--gold);
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(184,151,58,0.3);
-  }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
 
-  .btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(184,151,58,0.4);
-    color: white;
-  }
+            .section-title {
+                font-size: 1.8rem;
+            }
 
-  .btn-secondary {
-    display: inline-block;
-    background: transparent;
-    color: var(--dark);
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    border: 1.5px solid var(--dark);
-    transition: all 0.3s ease;
-  }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-  .btn-secondary:hover {
-    background: var(--dark);
-    color: white;
-    transform: translateY(-2px);
-  }
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
 
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-  }
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
 
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 1rem;
+            }
 
-  .stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1;
-  }
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.85rem;
+            }
 
-  .stat-number span {
-    color: var(--gold);
-  }
+            .logo {
+                font-size: 1.4rem;
+            }
 
-  .stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    font-weight: 500;
-    margin-top: 0.3rem;
-  }
+            .hero {
+                padding: 3rem 1rem;
+            }
 
-  .stat-divider {
-    width: 1px;
-    height: 50px;
-    background: var(--border);
-    align-self: center;
-  }
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
 
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+            .hero-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
 
-  .hero-card {
-    background: white;
-    border-radius: 4px;
-    padding: 3rem;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.08);
-    position: relative;
-    max-width: 380px;
-    width: 100%;
-    border: 1px solid var(--border);
-  }
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
 
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--gold);
-    border-radius: 4px;
-    z-index: -1;
-  }
+            .services {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
 
-  .card-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--gold-pale);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-  }
+            .service-card {
+                padding: 1.5rem;
+            }
 
-  .card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dark);
-    margin-bottom: 0.5rem;
-  }
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
 
-  .card-text {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-  }
+            .contact {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Kuaför <span>RAFET</span></div>
+            <ul class="nav-links">
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  .rating-display {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 1.2rem;
-    background: var(--bg-section);
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    margin-bottom: 1rem;
-  }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Kuaför <span>RAFET</span></h1>
+            <p class="hero-subtitle">Kadıköy'ün En Güvenilir Berber ve Kuaför Salonu</p>
+            
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">4.7 (89 Değerlendirme)</span>
+            </div>
 
-  .stars {
-    color: var(--gold);
-    font-size: 1rem;
-    letter-spacing: 2px;
-  }
+            <a href="tel:(0216) 336 53 67" class="cta-button">Randevu Al</a>
+        </div>
+    </section>
 
-  .rating-info {
-    display: flex;
-    flex-direction: column;
-  }
+    <!-- Services Section -->
+    <section class="services" id="hizmetler">
+        <h2 class="section-title">Sunduğumuz <span>Hizmetler</span></h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Erkek Saç Kesimi</h3>
+                <p>Modern ve klasik saç kesim teknikleri ile en son moda trendlerine uygun stilize saç kesim hizmetimizi sunuyoruz.</p>
+            </div>
 
-  .rating-score {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1
+            <div class="service-card">
+                <div class="service-icon">💇</div>
+                <h3>Kadın Saç Kesimi</h3>
+                <p>Saç şeklinize ve yüz tipinize uygun, uzman kuaförlerimiz tarafından yapılan profesyonel saç kesim hizmeti.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💆</div>
+                <h3>Saç Bakım ve Şekillendirme</h3>
+                <p>Saçlarınızın sağlığını koruyan ve parlaklığını artıran profesyonel bakım ve şekillendirme hizmetleri.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Saç Boyama ve Renklendirme</h3>
+                <p>Doğal ve kaliteli ürünlerle yapılan profesyonel saç boyama ve renklendirme hizmetleri.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Saç Protein Bakım</h3>
+                <p>Yıpranmış ve hasarlı saçlara yoğun nemlendirme ve onarım sağlayan premium protein bakım uygulaması.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💈</div>
+                <h3>Berber Hizmetleri</h3>
+                <p>Klasik tıraş, saç kesimi ve yüz bakım hizmetleri ile eksiksiz berber deneyimi sunuyoruz.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">👶</div>
+                <h3>Çocuk Saç Kesimi</h3>
+                <p>Çocuklar için güvenli ve rahat ortamda yapılan, oyuncu ve eğlenceli saç kesim hizmeti.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💎</div>
+                <h3>Özel Etkinlik Saç Tasarımı</h3>
+                <p>Düğün, nişan ve özel etkinlikler için özel tasarlanmış harika saç stilleri ve makyaj hizmetleri.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧴</div>
+                <h3>Saç Uzatma ve Kalınlaştırma</h3>
+                <p>Profesyonel teknikleri kullanarak saçlarınızı uzatan ve kalın gösterimini sağlayan hizmetlerimiz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="iletisim">
+        <div class="contact-container">
+            <h2 class="section-title">Bize <span>Ulaşın</span></h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>📍 Adresimiz</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📌</div>
+                        <div class="info-text">
+                            Moda Caddesi, Gündoğdu<br>
+                            Hünkar Sok. No:1<br>
+                            34000 Kadıköy/İstanbul, Türkiye
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>📱 İletişim Bilgileri</h3>
+                    <div class="info-item">
+                        <div class="info-icon">☎️</div>
+                        <div class="info-text">
