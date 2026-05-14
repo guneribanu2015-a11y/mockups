@@ -1,502 +1,455 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hair Design Aura - Kadıköy, İstanbul</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hair Design Aura - İstanbul Kadıköy'de premium saç tasarım ve bakım hizmetleri">
+    <meta name="keywords" content="saç salonu, kuaför, Kadıköy, İstanbul, saç tasarım">
+    <title>Hair Design Aura - Premium Saç Tasarım Salonu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
 
-  :root {
-    --gold: #b8924a;
-    --gold-light: #d4af70;
-    --gold-pale: #f5e6cc;
-    --dark: #1a1a1a;
-    --dark-mid: #333333;
-    --gray: #666666;
-    --light-gray: #f7f5f2;
-    --white: #ffffff;
-    --border: #e8ddd0;
-  }
+        /* Navigation Bar */
+        nav {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-  html {
-    scroll-behavior: smooth;
-  }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  body {
-    font-family: 'Raleway', sans-serif;
-    background-color: var(--white);
-    color: var(--dark);
-    overflow-x: hidden;
-  }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c1810;
+            letter-spacing: -0.5px;
+        }
 
-  /* SCROLLBAR */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: var(--light-gray);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 3px;
-  }
+        .logo span {
+            color: #d4a574;
+        }
 
-  /* NAVIGATION */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
-  }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
 
-  nav.scrolled {
-    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
-  }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-  }
+        nav a:hover {
+            color: #d4a574;
+        }
 
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c1810;
+        }
 
-  .nav-logo-main {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--dark);
-    letter-spacing: 1px;
-  }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f1ed 0%, #e8ddd4 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  .nav-logo-sub {
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--gold);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-    list-style: none;
-  }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .nav-links a {
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gray);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s;
-  }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #2c1810;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
 
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--gold);
-    transition: width 0.3s;
-  }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
 
-  .nav-links a:hover {
-    color: var(--gold);
-  }
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
 
-  .nav-links a:hover::after {
-    width: 100%;
-  }
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
 
-  .nav-cta {
-    background: var(--gold);
-    color: var(--white) !important;
-    padding: 10px 22px;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase;
-    transition: background 0.3s, transform 0.2s !important;
-    display: inline-block;
-  }
+        .btn-primary {
+            display: inline-block;
+            background-color: #d4a574;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+        }
 
-  .nav-cta::after {
-    display: none !important;
-  }
+        .btn-primary:hover {
+            background-color: #c0935f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+        }
 
-  .nav-cta:hover {
-    background: var(--dark) !important;
-    color: var(--white) !important;
-    transform: translateY(-1px);
-  }
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
 
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    background: none;
-    border: none;
-    padding: 4px;
-  }
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c1810;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
 
-  .hamburger span {
-    width: 24px;
-    height: 2px;
-    background: var(--dark);
-    transition: all 0.3s;
-    display: block;
-  }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
 
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-  .mobile-menu {
-    display: none;
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    padding: 20px 24px 28px;
-    flex-direction: column;
-    gap: 20px;
-  }
+        .service-card h3 {
+            color: #2c1810;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
 
-  .mobile-menu.open {
-    display: flex;
-  }
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
 
-  .mobile-menu a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--dark-mid);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-    transition: color 0.3s;
-  }
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+            padding: 5rem 2rem;
+            margin-top: 5rem;
+        }
 
-  .mobile-menu a:hover {
-    color: var(--gold);
-  }
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-  .mobile-menu .mobile-cta {
-    background: var(--gold);
-    color: var(--white);
-    text-align: center;
-    padding: 14px;
-    border-radius: 2px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    border: none;
-    margin-top: 4px;
-  }
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c1810;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(160deg, #faf8f5 0%, #f0ebe3 50%, #faf8f5 100%);
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 72px;
-  }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(184,146,74,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
+        .contact-item {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
 
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: -80px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(184,146,74,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
+        .contact-item-icon {
+            font-size: 2.5rem;
+            color: #d4a574;
+            margin-bottom: 1rem;
+        }
 
-  .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 24px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
+        .contact-item h3 {
+            color: #2c1810;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 50px;
-    margin-bottom: 28px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 1px;
-    box-shadow: 0 2px 12px rgba(184,146,74,0.1);
-  }
+        .contact-item p {
+            color: #666;
+            margin-bottom: 1rem;
+            word-break: break-word;
+        }
 
-  .hero-badge-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
+        .contact-link {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
 
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.7; }
-  }
+        .contact-link:hover {
+            color: #c0935f;
+        }
 
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 5vw, 68px);
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.1;
-    margin-bottom: 24px;
-  }
+        /* Footer */
+        footer {
+            background-color: #2c1810;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
 
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-    display: block;
-  }
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
 
-  .hero-desc {
-    font-size: 16px;
-    color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 40px;
-    font-weight: 400;
-    max-width: 480px;
-  }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                gap: 1rem;
+            }
 
-  .hero-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+            nav ul.active {
+                display: flex;
+            }
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold);
-    color: var(--white);
-    padding: 16px 36px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-    transition: all 0.3s;
-    box-shadow: 0 8px 30px rgba(184,146,74,0.3);
-  }
+            .mobile-menu-btn {
+                display: block;
+            }
 
-  .btn-primary:hover {
-    background: var(--dark);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
-  }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
 
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    color: var(--dark);
-    padding: 16px 28px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
+            .hero .subtitle {
+                font-size: 1rem;
+            }
 
-  .btn-secondary:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(184,146,74,0.04);
-  }
+            .services h2,
+            .contact h2 {
+                font-size: 1.8rem;
+            }
 
-  .hero-stats {
-    display: flex;
-    gap: 36px;
-    margin-top: 52px;
-    padding-top: 36px;
-    border-top: 1px solid var(--border);
-  }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-  }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
 
-  .stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1;
-  }
+            nav .container {
+                flex-wrap: wrap;
+            }
 
-  .stat-label {
-    font-size: 11px;
-    color: var(--gray);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 6px;
-    font-weight: 500;
-  }
+            nav {
+                padding: 1rem;
+            }
+        }
 
-  .hero-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
-  }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+                min-height: 60vh;
+            }
 
-  .hero-img-main {
-    width: 100%;
-    height: 380px;
-    background: linear-gradient(135deg, #e8ddd0, #d4c4b0);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
 
-  .hero-img-main::before {
-    content: '✂';
-    font-size: 80px;
-    color: rgba(255,255,255,0.3);
-    position: absolute;
-  }
+            .btn-primary {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+            }
 
-  .hero-img-main-inner {
-    background: linear-gradient(135deg, #c9b89a 0%, #b8a080 40%, #a08060 100%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    padding: 24px;
-  }
+            .services,
+            .contact-container {
+                padding: 0 1rem;
+            }
 
-  .hero-img-tag {
-    background: var(--white);
-    padding: 12px 18px;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  }
+            .service-card,
+            .contact-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">Hair Design <span>Aura</span></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul id="navMenu">
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="tel:0530 149 90 40" class="btn-primary">Randevu Al</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  .hero-img-tag-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--dark);
-  }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hair Design Aura</h1>
+            <p class="subtitle">Saçlarınıza Yeni Bir Boyut Kazandırın</p>
+            <div class="hero-rating">
+                <span class="stars">★★★★★</span>
+                <span>4.8 / 5 (196 Değerlendirme)</span>
+            </div>
+            <a href="tel:0530 149 90 40" class="btn-primary">Randevu Al</a>
+        </div>
+    </section>
 
-  .hero-img-tag-sub {
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    margin-top: 2px;
-    font-weight: 500;
-  }
+    <!-- Services Section -->
+    <section class="services" id="hizmetler">
+        <h2>Hizmetlerimiz</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Saç Kesimi</h3>
+                <p>Özgün tasarımlar ve profesyonel kesim teknikleri ile saçlarınızı şekillendiriyoruz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Saç Boyama</h3>
+                <p>En kaliteli boyalar ve uzman boyacılarımız ile ideal renk bulun.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💆</div>
+                <h3>Saç Bakımı</h3>
+                <p>Keratin, protein ve doğal ürünler ile saçlarınızı yoğun bakıma alıyoruz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌊</div>
+                <h3>Dalgalı Saç Şekillendirmesi</h3>
+                <p>Balayaj, dip boyama ve degradé saç teknikleri ile saçlarınızı canlandırıyoruz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Üst Işı Uygulaması</h3>
+                <p>Doğal görünümlü, parlak ve hacimli saçlar için üst ışı hizmetimiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💇</div>
+                <h3>Saç Düzleştirme</h3>
+                <p>Proteinli saç düzleştirme ve koruma uygulamalarımız ile düzgün ve sağlıklı saçlar.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👰</div>
+                <h3>Gelin Saçı</h3>
+                <p>Özel günleriniz için tasarlanmış, uzun süreli gelin saçı stillleri.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Saç Onarım Tedavisi</h3>
+                <p>Hasarlı ve kırılgan saçları restore etmek için profesyonel tedaviler.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧴</div>
+                <h3>Doğal Ürün Uygulaması</h3>
+                <p>Organik ve kimyasız ürünler ile doğa dostu saç bakım hizmetleri.</p>
+            </div>
+        </div>
+    </section>
 
-  .hero-img-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .hero-img-small {
-    height: 140px;
-    background: linear-gradient(135deg, #e0d5c5, #cfc0a8);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: rgba(255,255,255,0.6);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-img-small::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.1) 100%);
-  }
-
-  .hero-float-badge {
-    position: absolute;
-    top: 20px;
-    right: -16px;
-    background
+    <!-- Contact Section -->
+    <section class="contact" id="iletisim">
+        <div class="contact-container">
+            <h2>Bize Ulaşın</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <h3>Adres</h3>
+                    <p>Osmanağa, Aktepe cad no 33/3, 34714 Kadıköy/İstanbul, Türkiye</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📱</div>
+                    <h3>Telefon</h3>
+                    <p>
+                        <a href="tel:0530 149
